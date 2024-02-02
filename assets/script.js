@@ -52,6 +52,11 @@ const questions = [
     
 ];
 
+document.getElementById('start-btn').addEventListener('click', function() {
+    document.getElementById('start').classList.add('hidden');
+    document.getElementById('quiz').classList.remove('hidden');
+});
+
 const startButton = document.getElementById("start-btn");
 const quizContainer = document.getElementById("quiz");
 const resultContainer = document.getElementById("result");
@@ -91,15 +96,21 @@ function displayQuestion() {
  
 function handleAnswer(selectedAnswer) {
     const currentQuestion = questions[currentQuestionIndex];
+    const choicesContainer = document.getElementById("choices-container");
+
 
     if (selectedAnswer === currentQuestion.correctAnswer) {
         score++;
+        choicesContainer.querySelectorAll("button")[currentQuestion.choices.indexOf(selectedAnswer)].classList.add("correct");
+        alert("Correct!");
     } else {
         // Subtract time if the answer is incorrect
         timeLeft -= 10;
         if (timeLeft < 0) {
             timeLeft = 0; // Ensure time doesn't go negative
         }
+        choicesContainer.querySelectorAll("button")[currentQuestion.choices.indexOf(selectedAnswer)].classList.add("incorrect");
+        alert("Incorrect! 10 seconds deducted.");
     }
 
     currentQuestionIndex++;

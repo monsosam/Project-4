@@ -8,26 +8,33 @@
     <title>Coding Quiz</title>
   </head>
   <body>
-    <div id="quiz-container">
-        <div id="quiz" class="hidden">
-            <h2 id="question">Question 1:</h2>
+    <header>
+        <div id="view-high-scores">View high scores</div>
+        <div id="timer">Time: 75</div>
+    </header>
+
+    <main id="quiz-container">
+
+        <section id="start">
+            <h2>Coding Quiz Challenge</h2>
+            <button id="start-btn" class="button-shared">Start Quiz</button>
+        </section>
+        
+        <section id="quiz" class="hidden">
+            <div id="question">Question 1:</div>
             <div id="choices-container">
                 <!-- Choices will be dynamically added here using JavaScript -->
             </div>
-            <button id="submit-btn">Submit</button>
-            <div id="timer">Time: 60</div>
-        </div>
+            
+        </section>
 
-        <div id="result" class="hidden">
+        <section id="result" class="hidden">
             <p id="score">Your score: <span id="final-score"></span></p>
-            <label for="initials-input">Enter your initials:</label>
-            <input type="text" id="initials-input">
-            <button id="save-btn">Save</button>
-            <button id="restart-btn">Restart Quiz</button>
-        </div>
-    </div>
-
-    <button id="start-btn">Start Quiz</button>
+            <input type="text" id="initials-input" placeholder="Enter initials">
+            <button id="save-btn" class="button-shared">Save</button>
+            <button id="restart-btn" class="button-shared">Restart Quiz</button>
+        </section>
+    </main>
 
     <script src="./assets/script.js"></script>
 </body>
