@@ -8,16 +8,29 @@
     <title>Coding Quiz</title>
   </head>
   <body>
-    <div class="panel">
-        <h1>Coding Quiz</h1>
-        <div class="question" id="ques"></div>
-        <div class="options" id="opt"></div>
-        <button onclick="checkAns()" id="btn">SUBMIT</button>
-        <div id="score"></div>
-        <script src="script.js"></script>
+    <div id="quiz-container">
+        <div id="quiz" class="hidden">
+            <h2 id="question">Question 1:</h2>
+            <div id="choices-container">
+                <!-- Choices will be dynamically added here using JavaScript -->
+            </div>
+            <button id="submit-btn">Submit</button>
+            <div id="timer">Time: 60</div>
+        </div>
+
+        <div id="result" class="hidden">
+            <p id="score">Your score: <span id="final-score"></span></p>
+            <label for="initials-input">Enter your initials:</label>
+            <input type="text" id="initials-input">
+            <button id="save-btn">Save</button>
+            <button id="restart-btn">Restart Quiz</button>
+        </div>
     </div>
- 
-    </body>
+
+    <button id="start-btn">Start Quiz</button>
+
+    <script src="./assets/script.js"></script>
+</body>
 
   
 </html>
