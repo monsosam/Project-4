@@ -9,7 +9,7 @@
   </head>
   <body>
     <header>
-        <div id="view-high-scores">View high scores</div>
+        <div id="view-high-scores" class="button-high-score">View High Scores</div>
         <div id="timer">Time: 75</div>
     </header>
 
@@ -25,6 +25,8 @@
             <div id="choices-container">
                 <!-- Choices will be dynamically added here using JavaScript -->
             </div>
+            <!-- Feedback area for right/wrong answers -->
+            <div id="feedback" aria-live="polite"></div>
             
         </section>
 
@@ -34,10 +36,16 @@
             <button id="save-btn" class="button-shared">Save</button>
             <button id="restart-btn" class="button-shared">Restart Quiz</button>
         </section>
+        <section id="high-scores" class="hidden">
+            <h3>High Scores</h3>
+            <ul id="scores-list"> 
+                <!-- High scores will be dynamically added here -->
+            </ul>
+            <button id="close-high-scores">Close</button>
+        </section>
+        
     </main>
 
     <script src="./assets/script.js"></script>
 </body>
-
-  
 </html>
